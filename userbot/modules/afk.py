@@ -182,6 +182,8 @@ async def set_afk(afk_e):
     ISAFK = True
     afk_time = datetime.now()
     raise StopPropagation
+    await sleep(2)
+    await afk_e.delete()
 
 
 @register(outgoing=True)
