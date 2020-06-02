@@ -16,7 +16,7 @@ from userbot.events import register
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
-    "Hi! my Boss is afk at the moment",
+    "Hi! my Boss is afk right now",
 ]
 # =================================================================
 
