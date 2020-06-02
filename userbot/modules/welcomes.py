@@ -1,6 +1,7 @@
 from userbot.events import register
 from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
+from asyncio import sleep
 
 
 @bot.on(ChatAction)
@@ -110,7 +111,8 @@ async def save_welcome(event):
         await event.edit(success.format('saved'))
     else:
         await event.edit(success.format('updated'))
-
+    await sleep(2)
+    await event.delete()
 
 @register(outgoing=True, pattern="^.checkwelcome$")
 async def show_welcome(event):
