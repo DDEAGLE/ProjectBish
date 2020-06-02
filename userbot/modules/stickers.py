@@ -19,16 +19,7 @@ from telethon.tl.types import InputStickerSetID
 from telethon.tl.types import DocumentAttributeSticker
 
 KANGING_STR = [
-    "Using Witchery to kang this sticker...",
-    "Plagiarising hehe...",
-    "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
-    "Hey that's a nice sticker!\nMind if I kang?!..",
-    "hehe me stel ur stikér\nhehe.",
-    "Ay look over there (☉｡☉)!→\nWhile I kang this...",
-    "Roses are red violets are blue, kanging this sticker so my pacc looks cool",
-    "Imprisoning this sticker...",
-    "Mr.Steal Your Sticker is stealing this sticker... ",
+    "It's time to Kang... (☉｡☉)!→"
 ]
 
 
@@ -95,7 +86,7 @@ async def kang(args):
                 emoji = splat[1]
 
         packname = f"a{user.id}_by_{user.username}_{pack}"
-        packnick = f"@{user.username}'s kang pack Vol.{pack}"
+        packnick = f"@{user.username}'s pack {pack}"
         cmd = '/newpack'
         file = io.BytesIO()
 
@@ -123,7 +114,7 @@ async def kang(args):
                 while "120" in x.text:
                     pack += 1
                     packname = f"a{user.id}_by_{user.username}_{pack}"
-                    packnick = f"@{user.username}'s kang pack Vol.{pack}"
+                    packnick = f"@{user.username}'s pack {pack}"
                     await args.edit("`Switching to Pack " + str(pack) +
                                     " due to insufficient space`")
                     await conv.send_message(packname)
@@ -234,8 +225,7 @@ async def kang(args):
                 await bot.send_read_acknowledge(conv.chat_id)
 
         await args.edit(
-            "`Sticker kanged successfully!`"
-            f"\nPack can be found [here](t.me/addstickers/{packname})",
+            "`Sticker kanged ! Pack [here](t.me/addstickers/{packname})",
             parse_mode='md')
 
 
